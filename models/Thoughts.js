@@ -1,5 +1,25 @@
 const { Schema, model } = require('mongoose');
 
+const ReactionSchema = new Schema({
+    reactionId: {
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId()
+    },
+    reactionBody: {
+        type: String,
+        required: true,
+        maxlength: 280
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+})
+
 const thoughtsSchema = new Schema({
     thoughtText: {
         type: String,
@@ -15,7 +35,7 @@ const thoughtsSchema = new Schema({
         type: String,
         required: true
     },
-    // reactions: [ReactionSchema]
+    reactions: [ReactionSchema]
 });
 
 // create the Thoughts model using thoughtsSchema
