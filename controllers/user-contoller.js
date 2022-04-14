@@ -12,7 +12,7 @@ const userController = {
     },
 
     // get one user by id
-    getUserByID({ params }, res) {
+    getUserById({ params }, res) {
         User.findOne({ _id: params.id })
             .then(dbUserdata => res.json(dbUserdata))
             .catch(err => {
