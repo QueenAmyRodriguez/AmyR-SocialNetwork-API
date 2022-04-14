@@ -12,7 +12,7 @@ const UserSchema = new Schema({
         required: true,
         unique: true,
         match: [/.+@.+\..+/]
-    },
+    }
     // thoughts: [
     //     {
     //         type: Schema.Types.ObjectId,
